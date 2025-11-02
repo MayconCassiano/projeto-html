@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
 
-
 :root{
     --cor-primaria: #000000;
     --cor-secundaria: #F6F6F6;
@@ -14,50 +13,34 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body{
-
-background-image: url('../assets/wallpaper001.jpg'); /* Caminho da imagem */
-      background-size: cover;       /* A imagem cobre toda a tela */
-      background-repeat: no-repeat; /* Evita repetição */
-      background-position: center;  /* Centraliza a imagem */
-      background-attachment: fixed; /* Mantém o fundo fixo ao rolar a página */
-      height: 100vh;                /* Altura igual à tela inteira */
-      margin: 0;                    /* Remove margens padrão */
-      font-family: Arial, sans-serif;
-      color: white;                 /* Cor do texto para contraste */
-      text-align: center;
-
-    /* height: 100vh; */
-    box-sizing: border-box;
-    background-color: var(--cor-primaria);
+    font-family: Arial, sans-serif;
     color: var(--cor-secundaria);
+    text-align: center;
 
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),  /* camada preta semitransparente */
-    url('../assets/wallpaper001.jpg');                        /* imagem de fundo */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  height: 100vh;
-  margin: 0;
-  font-family: Arial, sans-serif;
-  color: white;
-  text-align: center;
-  box-sizing: border-box;
+    /* Configuração do background com sobreposição semitransparente */
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url('../assets/wallpaper001.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+
+    height: 100vh;
 }
 
-
-
+/* === Cabeçalho e menu de navegação === */
 .cabecalho{
-    padding: 2% 0% 0% 15%;
+    padding: 2% 0 0 15%;
 }
 
 .cabecalho__menu{
     display: flex;
-    gap: 100px;
+    gap: 100px; /* espaçamento uniforme entre os links */
 }
 
 .cabecalho__menu__link{
@@ -72,18 +55,21 @@ background-image: url('../assets/wallpaper001.jpg'); /* Caminho da imagem */
     color: var(--cor-terciaria);
 }
 
+/* === Seção de apresentação do portfólio === */
 .apresentacao{
-    gap: 72px;
-    padding: 5.5% 15%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 72px; /* espaçamento entre conteúdo e imagem */
+    padding: 5.5% 15%;
 }
+
+/* Conteúdo textual da apresentação */
 .apresentacao__conteudo{
     width: 50%;
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 50px; /* espaçamento entre título, texto e links */
 }
 
 .apresentacao__conteudo__titulo{
@@ -96,6 +82,7 @@ background-image: url('../assets/wallpaper001.jpg'); /* Caminho da imagem */
     font-family: var(--fonte-secundaria);
 }
 
+/* Seção de links dentro da apresentação */
 .apresentacao__links{
     display: flex;
     flex-direction: column;
@@ -104,14 +91,15 @@ background-image: url('../assets/wallpaper001.jpg'); /* Caminho da imagem */
     gap: 33px;
 }
 
+/* Subtítulo da área de links */
 .apresentacao__links__subtitulo{
     font-family: var(--fonte-primaria);
     font-weight: 400;
     font-size: 1.43rem;
 }
 
+/* Botões de navegação */
 .apresentacao__links__navegacao{
-    /* background-color: #22D4FD; */
     display: flex;
     justify-content: center;
     gap: 16px;
@@ -124,16 +112,21 @@ background-image: url('../assets/wallpaper001.jpg'); /* Caminho da imagem */
     padding: 21.5px 0;
     text-decoration: none;
     color: var(--cor-secundaria);
-    font-family: var(--fonte-secundaria)}
+    font-family: var(--fonte-secundaria);
+}
 
 .apresentacao__links__link:hover {
     background-color: var(--cor-hover);
 }
 
+/* Imagem principal da apresentação */
 .apresentacao__imagem{
     width: 35%;
+    opacity: 0;
+    animation: fadeInUp 1.2s ease forwards; /* efeito de entrada suave */
 }
 
+/* === Rodapé do site === */
 .rodape{
     color: var(--cor-primaria);
     background-color: var(--cor-terciaria);
@@ -144,7 +137,7 @@ background-image: url('../assets/wallpaper001.jpg'); /* Caminho da imagem */
     font-size: 1.9rem;
 }
 
-/* === Efeito de aparecer com movimento (fade-in + slide) === */
+/* === Animação de fade-in com movimento vertical === */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -156,20 +149,55 @@ background-image: url('../assets/wallpaper001.jpg'); /* Caminho da imagem */
   }
 }
 
-.apresentacao__imagem {
-  width: 35%;
-  opacity: 0;
-  animation: fadeInUp 1.2s ease forwards;
-}
-
 .apresentacao__conteudo__titulo,
 .apresentacao__conteudo__texto,
 .apresentacao__links {
-  opacity: 0;
-  animation: fadeInUp 1.2s ease forwards;
+    opacity: 0;
+    animation: fadeInUp 1.2s ease forwards;
 }
 
+/* === Estilo da seção de certificados === */
+.certificados-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* centraliza os certificados */
+    gap: 1.5rem;             /* espaçamento entre certificados */
+    padding: 3rem 2rem 2rem 2rem; /* espaçamento superior e lateral */
+}
 
+/* Bloco individual de cada certificado */
+.certificado {
+    border: 0.15rem solid #ccc;
+    padding: 0.8rem;
+    flex: 0 0 30%;  /* largura relativa para responsividade */
+    background-color: white;
+    text-align: center;
+    box-shadow: 0 0.15rem 0.4rem rgba(0,0,0,0.1);
+    margin-top: 1rem;     
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.certificado:hover {
+    transform: translateY(-0.4rem);
+    box-shadow: 0 0.4rem 1.2rem rgba(0,0,0,0.2);
+}
+
+.certificado img {
+    width: 100%; 
+    height: auto;
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+/* Ajuste responsivo: 1 coluna em telas pequenas */
+@media (max-width: 600px) {
+    .certificado {
+        flex: 0 0 90%;
+    }
+}
+
+/* === Ajustes responsivos para telas médias e grandes === */
 @media ( max-width: 1200px ) {
     .cabecalho{
         padding: 8%;
@@ -177,6 +205,7 @@ background-image: url('../assets/wallpaper001.jpg'); /* Caminho da imagem */
 
     .cabecalho__menu{
         justify-content: center;
+        gap: 70px;
     }
 
     .apresentacao{
@@ -189,7 +218,6 @@ background-image: url('../assets/wallpaper001.jpg'); /* Caminho da imagem */
     }
 
     .apresentacao__imagem{
-    width: 68%;
+        width: 68%;
+    }
 }
-}
-

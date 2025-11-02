@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <nav class="cabecalho__menu">
+            <a class="cabecalho__menu__link" href="index.html">Home</a>
+            <a class="cabecalho__menu__link" href="about.html">Sobre mim</a>
+            <a class="cabecalho__menu__link" href="certificacoes.html">Certificações</a>
+        </nav>
+    </header>
+
+    <main class="apresentacao-certificados">
+        <!-- Container para os certificados -->
+        <div id="container" class="certificados-container"></div>
+
+        <script>
+            const certificados = [
+                "assets/meus-certificados/certificado-py.jpg",
+                "assets/meus-certificados/certificado-log.jpg",
+                "assets/meus-certificados/certificado-log2.jpg",
+                "assets/meus-certificados/certificado-prompt.jpg",
+                "assets/meus-certificados/certificado-ia.jpg",
+                "assets/meus-certificados/certificado-git-github.jpg",
+                "assets/meus-certificados/certificado-html.jpg",
+                "assets/meus-certificados/certificado1.jpg",
+                "assets/meus-certificados/certificado2.jpg",
+                "assets/meus-certificados/certificado3.jpg",
+                "assets/meus-certificados/certificado4.jpg"
+            ];
+
+            const container = document.getElementById('container');
+
+            certificados.forEach((arquivo, index) => {
+                const div = document.createElement('div');
+                div.className = 'certificado';
+                div.innerHTML = `<img src="${arquivo}" alt="Certificado ${index + 1}">
+                                 <p>Curso ${index + 1}</p>`;
+                container.appendChild(div);
+            });
+        </script>
+    </main>
+
+    <footer class="rodape">
+        <p>Desenvolvido por Maycon</p>
+    </footer>
+</body>
+
+</html>
