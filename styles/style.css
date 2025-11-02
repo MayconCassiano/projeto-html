@@ -24,7 +24,7 @@ body{
     /* Configuração do background com sobreposição semitransparente */
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-        url('../assets/wallpaper001.jpg');
+        url('../assets/wallpaper001.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
