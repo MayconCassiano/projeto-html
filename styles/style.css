@@ -144,29 +144,6 @@ background-image: url('../assets/wallpaper001.jpg'); /* Caminho da imagem */
     font-size: 1.9rem;
 }
 
-@media ( max-width: 1200px ) {
-    .cabecalho{
-        padding: 12%;
-    }
-
-    .cabecalho__menu{
-        justify-content: center;
-    }
-
-    .apresentacao{
-        flex-direction: column-reverse;
-        padding: 8%;      
-    }
-
-    .apresentacao__conteudo{
-        width: auto;
-    }
-
-    .apresentacao__imagem{
-    width: 70%;
-}
-}
-
 /* === Efeito de aparecer com movimento (fade-in + slide) === */
 @keyframes fadeInUp {
   0% {
@@ -190,5 +167,29 @@ background-image: url('../assets/wallpaper001.jpg'); /* Caminho da imagem */
 .apresentacao__links {
   opacity: 0;
   animation: fadeInUp 1.2s ease forwards;
+}
+
+
+@media ( max-width: 1200px ) {
+    .cabecalho{
+        padding: 8%;
+    }
+
+    .cabecalho__menu{
+        justify-content: center;
+    }
+
+    .apresentacao{
+        flex-direction: column-reverse;
+        padding: 8%;      
+    }
+
+    .apresentacao__conteudo{
+        width: auto;
+    }
+
+    .apresentacao__imagem{
+    width: 68%;
+}
 }
 
